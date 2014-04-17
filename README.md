@@ -26,28 +26,33 @@ In your project's Gruntfile, add a section named `punypng` to the data object pa
 grunt.initConfig({
   punypng: {
     options: {
-      // Task-specific options go here.
+      // you can get key at http://www.punypng.com/profile
+      key: 'cd1e2670d3167db696ea56b8c965fd3620a579cb'
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+
+    test: {
+        files: [{
+            src: 'test/fixtures/*.png',
+            dest: 'test/expected/'
+        }]
+    }
   },
 });
 ```
 
 ### Options
 
-#### options.separator
-Type: `String`
+#### options.key
+Type: `key`
 Default value: `',  '`
 
-A string value that is used to do something with whatever.
+A key you must have
 
 #### options.punctuation
-Type: `String`
-Default value: `'.'`
+Type: `lossy`
+Default value: `'true'`
 
-A string value that is used to do something else with whatever else.
+是否使用有损的压缩方式。推荐使用有损的压缩方式，有损的压缩是punypng的核心优势
 
 ### Usage Examples
 
@@ -57,27 +62,17 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   punypng: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  punypng: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      // you can get key at http://www.punypng.com/profile
+      key: 'cd1e2670d3167db696ea56b8c965fd3620a579cb'
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+
+    test: {
+        files: [{
+            src: 'test/fixtures/*.png',
+            dest: 'test/expected/'
+        }]
+    }
   },
 });
 ```
