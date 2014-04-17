@@ -1,3 +1,4 @@
+# （临时入库,暂时不能使用，会尽快完善）
 # grunt-punypng
 
 > optimize images with punypng.
@@ -26,8 +27,7 @@ In your project's Gruntfile, add a section named `punypng` to the data object pa
 grunt.initConfig({
   punypng: {
     options: {
-      // you can get key at http://www.punypng.com/profile
-      key: 'cd1e2670d3167db696ea56b8c965fd3620a579cb'
+      key: 'cd1e2670d3167db696ea56b8ck965fd3620a579cb'
     },
 
     test: {
@@ -46,9 +46,9 @@ grunt.initConfig({
 Type: `key`
 Default value: `',  '`
 
-A key you must have
+用于识别punypng账户的key，注册punypny账户后可以获得（http://www.punypng.com/profile）
 
-#### options.punctuation
+#### options.lossy
 Type: `lossy`
 Default value: `'true'`
 
